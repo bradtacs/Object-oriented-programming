@@ -10,9 +10,21 @@ class Cat
 
 end
 
-  def greeting
-    "Hello #{@name}"
+def meal_time
+
+end
+
+def eats_at
+  rand(24) # Means you need this information.
+  if eats_at > 12
+    puts "the cat eats at#{eats_at} AM"
+  else
+    puts "the cat eats at#{eats_at} PM"
+
   end
+end
 
+puts "the cat eats at#{eats_at} AM"
 
-  sam = Cat.new("sam" , "Food" , 3)
+sam = Cat.new("Sam" , "tuna", 9 )
+sandra = Cat.new("Sandra" , "milk", 3)

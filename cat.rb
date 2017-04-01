@@ -7,23 +7,21 @@ class Cat
     @preferred_food = preferred_food
     @meal_time = meal_time
   end
-end
 
-def eats_at
+  def eats_at
 
-  #  puts rand(24) random number
-  if @meal_time < 12
-    "#{@meal_time} AM"
-  else
-  "#{@meal_time} PM"
+    #  puts rand(24) random number
+    if @meal_time < 12
+      "#{@meal_time} AM"
+    else
+    "#{@meal_time} PM"
+    end
+
+    def meow
+      "Hi my name is #{@name} and I eat #{@preferred_food} at #{@meal_time}!"
+    end
   end
-
-  def meow
-    "Hi my name is #{@name} and I eat #{@preferred_food} at #{@meal_time}!"
-  end 
-
 end
-
 
 sam = Cat.new("Sam" , "tuna" , 21 )
 sandra = Cat.new("Sandra" , "milk" , 3)

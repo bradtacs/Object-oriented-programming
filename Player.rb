@@ -12,9 +12,25 @@ class Player
   end
 
   def collect_treasure
+
+    @gold_goins += 1
+
     if @gold_goins > 10
-      @gold_goins += 1
+
+         level_up
+
      end
+  end
+
+  def do_battle
+    @health_points -= 1
+
+    if @health_points < 0
+
+      restart
+
+    end
+
   end
 
   def restart
@@ -24,3 +40,6 @@ class Player
   end
 
 end
+
+
+puts Player.health_points

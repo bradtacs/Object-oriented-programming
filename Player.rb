@@ -1,21 +1,22 @@
 class Player
-  attr_reader :gold_goins, :health_points, :lives
+  attr_accessor  :gold_coins, :health_points, :lives
 
   def initialize
-    @gold_goins = 0
+    @gold_coins = 0
     @health_points = 10
     @lives = 5
 
   end
+
   def level_up
      @lives += 1
   end
 
   def collect_treasure
 
-    @gold_goins += 1
+    @gold_coins += 1
 
-    if @gold_goins > 10
+    if @gold_coins > 10
 
          level_up
 
@@ -23,9 +24,12 @@ class Player
   end
 
   def do_battle
+
+    #puts "You are doing battle"
+
     @health_points -= 1
 
-    if @health_points < 0
+    if @health_points <= 0
 
       restart
 
@@ -34,12 +38,11 @@ class Player
   end
 
   def restart
-    @gold_goins = 0
+    # puts "You have died!"
+    @gold_coins = 0
     @health_points = 10
     @lives = 5
+    puts
   end
 
 end
-
-
-puts Player.health_points

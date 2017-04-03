@@ -1,11 +1,11 @@
 class BankAccount
 
-  attr_reader :balance :interest_rate
+  attr_reader :balance, :interest_rate
 
   def initialize
-    @balance = 0
+    @balance = 24000
     @interest_rate = 0.03
-    @accounts << self
+
   end
 
   def deposit(amount)
@@ -14,7 +14,7 @@ class BankAccount
 
   def withdraw(amount)
     if @balance - amount < 0
-      puts insuf funds
+      puts "insuf funds"
     else
     @balance = @balance - amount
   end
@@ -27,6 +27,17 @@ end
 
 my_account = BankAccount.new
 
+puts "My balance"
 puts my_account.balance
 
-puts
+puts "Deposit 200"
+my_account.deposit(200)
+
+puts my_account.balance
+puts "Withdraw 500"
+my_account.withdraw(500)
+
+my_account.gain_interest
+
+puts "My balance"
+puts my_account.balance
